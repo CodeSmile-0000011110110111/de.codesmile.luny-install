@@ -22,11 +22,11 @@ namespace CodeSmileEditor.Luny.Install
 				Name = "de.codesmile.core",
 				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.core.git#1.0.0",
 			},
-			// new LunyPackageInfo
-			// {
-			// 	Name = "de.codesmile.luny",
-			// 	GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny.git#0.8.0",
-			// },
+			new LunyPackageInfo
+			{
+				Name = "de.codesmile.luny",
+				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny.git#0.1.0",
+			},
 		};
 
 		private static ListRequest s_ListRequest;
