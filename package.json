@@ -1,0 +1,18 @@
+{
+  "name": "de.codesmile.luny-install",
+  "displayName": "CodeSmile Luny Installer",
+  "description": "Installs and updates Luny",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "unityRelease": "45f1",
+  "author": {
+    "name": "Steffen Itterheim aka 'CodeSmile' (Unity MVP, Self-Employed)",
+    "email": "steffen@steffenitterheim.de",
+    "url": "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny-install"
+  },
+  "changelogUrl": "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny-install/tree/main/CHANGELOG.md",
+  "documentationUrl": "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny-install/tree/main/README.md",
+  "licensesUrl": "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny-install/tree/main/LICENSE",
+  "dependencies": {},
+  "relatedPackages": {}
+}
