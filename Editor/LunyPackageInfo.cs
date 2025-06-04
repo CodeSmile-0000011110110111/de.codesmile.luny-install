@@ -6,7 +6,6 @@ namespace CodeSmileEditor.Luny.Install
 	public struct LunyPackageInfo
 	{
 		public string Name;
-		public string Version;
 		public string GitURL;
 	}
 }
