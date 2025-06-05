@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -33,61 +32,57 @@ namespace CodeSmileEditor.Luny.Install
 		private static AddRequest s_AddRequest;
 
 		[InitializeOnLoadMethod]
-		private static void OnLoad() => EditorApplication.delayCall += () => ListInstalledPackages();
+		private static void OnLoad()
+		{
+			s_ListRequest = null;
+			s_AddRequest = null;
+			ListInstalledPackages();
+		}
 
 		private static void ListInstalledPackages()
 		{
-			if (s_ListRequest != null)
-				throw new InvalidOperationException("List request in progress");
-			if (s_AddRequest != null)
-				throw new InvalidOperationException("Add request in progress");
-
 			s_ListRequest = Client.List(true, true);
-			EditorApplication.update -= OnEditorUpdate;
 			EditorApplication.update += OnEditorUpdate;
 		}
 
 		private static void OnEditorUpdate()
 		{
-			ProcessListRequest();
-			ProcessAddRequest();
+			if (s_ListRequest != null)
+				ProcessListRequest();
+
+			if (s_AddRequest != null)
+				ProcessAddRequest();
 		}
 
 		private static void ProcessListRequest()
 		{
-			if (s_ListRequest != null)
+			if (s_ListRequest.IsCompleted)
 			{
-				if (s_ListRequest.IsCompleted)
-				{
-					EditorApplication.update -= OnEditorUpdate;
-					var error = s_ListRequest.Error;
-					var status = s_ListRequest.Status;
-					var result = s_ListRequest.Result;
-					s_ListRequest = null;
+				EditorApplication.update -= OnEditorUpdate;
+				var error = s_ListRequest.Error;
+				var status = s_ListRequest.Status;
+				var result = s_ListRequest.Result;
+				s_ListRequest = null;
 
-					if (status == StatusCode.Success)
-						TryAddNextMissingPackage(result);
-					else
-						Debug.LogWarning($"Luny Installer failed to list packages: {error?.message} ({error?.errorCode})");
-				}
+				if (status == StatusCode.Success)
+					TryAddNextMissingPackage(result);
+				else
+					Debug.LogWarning($"Luny Installer failed to list packages: {error?.message} ({error?.errorCode})");
 			}
 		}
 
 		private static void ProcessAddRequest()
 		{
-			if (s_AddRequest != null)
+			if (s_AddRequest.IsCompleted)
 			{
-				if (s_AddRequest.IsCompleted)
-				{
-					EditorApplication.update -= OnEditorUpdate;
-					var error = s_AddRequest.Error;
-					var status = s_AddRequest.Status;
-					var result = s_AddRequest.Result;
-					s_AddRequest = null;
+				EditorApplication.update -= OnEditorUpdate;
+				var error = s_AddRequest.Error;
+				var status = s_AddRequest.Status;
+				var result = s_AddRequest.Result;
+				s_AddRequest = null;
 
-					if (status == StatusCode.Failure)
-						Debug.LogWarning($"Luny Installer failed to add package: {error?.message} ({error?.errorCode})");
-				}
+				if (status == StatusCode.Failure)
+					Debug.LogWarning($"Luny Installer failed to add package: {error?.message} ({error?.errorCode})");
 			}
 		}
 
@@ -102,7 +97,6 @@ namespace CodeSmileEditor.Luny.Install
 				{
 					Debug.Log($"Adding {requiredPackage.Name} from {requiredPackage.GitURL}");
 					s_AddRequest = Client.Add(requiredPackage.GitURL);
-					EditorApplication.update -= OnEditorUpdate;
 					EditorApplication.update += OnEditorUpdate;
 					break;
 				}
