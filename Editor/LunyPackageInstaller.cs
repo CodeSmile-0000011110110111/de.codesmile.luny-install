@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -7,7 +8,13 @@ using UnityEngine;
 
 namespace CodeSmileEditor.Luny.Install
 {
-	public static class LunyPackageInstaller
+	internal struct LunyPackageInfo
+	{
+		public String Name;
+		public String GitURL;
+	}
+
+	internal static class LunyPackageInstaller
 	{
 		private static readonly List<LunyPackageInfo> s_RequiredLunyPackages = new()
 		{
@@ -24,7 +31,7 @@ namespace CodeSmileEditor.Luny.Install
 			new LunyPackageInfo
 			{
 				Name = "de.codesmile.luny",
-				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny.git#0.1.0",
+				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny.git#0.2.0",
 			},
 		};
 
