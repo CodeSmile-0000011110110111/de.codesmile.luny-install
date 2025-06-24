@@ -9,6 +9,8 @@ Adding this package to your project will automatically add all required Luny pac
 
 This will add the necessary packages to Package Manager one by one.
 
+Note: This will import multiple packages one by one with repeating “domain reload” cycles. Please wait until the procedure completes and the editor becomes responsive again.
+
 ### Manual Installation
 
 If you'd rather do it yourself, follow these steps:
