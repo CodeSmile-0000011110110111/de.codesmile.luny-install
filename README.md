@@ -1,6 +1,9 @@
 # Luny Installation Package
 Adding this package to your project will automatically add all required Luny packages to the project one by one.
 
+- [Luny Website](https://lunyscript.com)
+- [Luny Repository](https://github.com/CodeSmile-0000011110110111/de.codesmile.luny) 
+
 ## Automated Installation
 
 - Open Package Manager in Unity Editor
