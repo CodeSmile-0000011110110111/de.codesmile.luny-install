@@ -8,7 +8,7 @@ Adding this package to your project will automatically add all required Luny pac
 
 - Open Package Manager in Unity Editor
 - Choose "Install package from git URL..."
-- Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.luny-install`
+- Enter this URL: `https://github.com/CodeSmile-0000011110110111/de.codesmile.luny-install.git`
 
 This will add the necessary packages to Package Manager one by one.
 
