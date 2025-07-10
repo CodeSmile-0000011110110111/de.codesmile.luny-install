@@ -21,17 +21,17 @@ namespace CodeSmileEditor.Luny.Install
 			new LunyPackageInfo
 			{
 				Name = "de.codesmile.luacsharp",
-				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luacsharp.git#0.5.0-dev.1",
+				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luacsharp.git",
 			},
 			new LunyPackageInfo
 			{
 				Name = "de.codesmile.core",
-				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.core.git#1.0.0",
+				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.core.git",
 			},
 			new LunyPackageInfo
 			{
 				Name = "de.codesmile.luny",
-				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny.git#0.2.0",
+				GitURL = "https://github.com/CodeSmile-0000011110110111/de.codesmile.luny.git",
 			},
 		};
 

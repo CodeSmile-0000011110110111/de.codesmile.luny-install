@@ -2,8 +2,8 @@
   "name": "de.codesmile.luny-install",
   "displayName": "CodeSmile Luny Installer",
   "description": "Installs and updates Luny",
-  "version": "1.0.0",
-  "unity": "2022.3",
+  "version": "1.0.1",
+  "unity": "6000.0",
   "unityRelease": "45f1",
   "author": {
     "name": "Steffen Itterheim aka 'CodeSmile' (Unity MVP, Self-Employed)",
